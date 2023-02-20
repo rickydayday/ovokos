@@ -1,0 +1,63 @@
+<?php
+session_start();
+//connect to database
+
+$hostName = "localhost";
+$userName = "root";
+$password = "";
+$databaseName = "ovokos";
+$db = new mysqli($hostName, $userName, $password, $databaseName);
+
+echo 'registration';
+
+// Check connection
+if ($db->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+
+  echo "No connection";
+}
+
+
+if(isset($_POST['register_btn']))
+{
+    $username=mysqli_real_escape_string($db,$_POST['username']);
+    $email=mysqli_real_escape_string($db,$_POST['email']);
+    $phone=mysqli_real_escape_string($db,$_POST['phone']);
+    $location=mysqli_real_escape_string($db,$_POST['location']);
+    $password=mysqli_real_escape_string($db,$_POST['password']);
+    $password2=mysqli_real_escape_string($db,$_POST['password2']); 
+
+
+    $query = "SELECT * FROM users WHERE username = '$username'";
+    $result=mysqli_query($db,$query);
+      if($result)
+      {
+     
+        if( mysqli_num_rows($result) > 0)
+        {
+                
+                echo '<script language="javascript">';
+                echo 'alert("Username already exists")';
+                echo '</script>';
+        }
+        
+          else
+          {
+            
+            if($password==$password2)
+            {           //Create User
+                $password=md5($password); //hash password before storing for security purposes
+                $sql="INSERT INTO users(username, email, phone, location, password ) VALUES('$username','$email','$phone','$location', '$password')"; 
+                mysqli_query($db,$sql);  
+                $_SESSION['message']="You are now logged in"; 
+                $_SESSION['username']=$username;
+                header("location:../ListUser/index.php");  //redirect list user page
+            }
+            else
+            {
+                $_SESSION['message']="The two password do not match";   
+            }
+          }
+      }
+}
+?>
