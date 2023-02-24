@@ -76,14 +76,26 @@ var sc_security="3dbf1565";
 var sc_remove_link=1;
 </script>
 
+
+
+
 <!-- <script type="text/javascript" language="javascript" src="./assets/counter.js"></script> -->
 <!-- End of StatCounter Code -->
 <tr><td id="tablebreak" width="1"></td><td width="1000" height="1000" background="./assets/bg10.gif" valign="top">
  <div id="f" style="display:none;font-size:0px;margin:0px;padding:0px;border: #0000ff 2px solid;position: absolute;width:1px;height:1px;z-index:2;"></div>
-<map>
-   <canvas id="myCanvas" width="1000" height="1000"></canvas>
-</map>
+
+
+ <style>
+  canvas{
+    background-image:url('./assets/IMG-20221117-WA0002 1.jpg');
+
+  }
+ </style>
+   <canvas  id="myCanvas" width="1000" height="1000"></canvas>
+
    <script type="text/javascript">
+
+     
 	function getSquare(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
     return {
@@ -117,7 +129,7 @@ var context = canvas.getContext('2d');
 var lambs = new Image();
 
 lambs.addEventListener('load',eventLoad,false);
-lambs.src = './src/images/lamb-logo.png';
+lambs.src = './assets/IMG-20221117-WA0006.jpg';
 
 function eventLoad(){
 
@@ -139,8 +151,8 @@ function drawScreen(){
     
 
 
-context.drawImage(lambs,0, 0,16,16);
-context.drawImage(lambs,50,50,16,16);
+// context.drawImage(lambs,0, 0,16,16);
+// context.drawImage(lambs,50,50,16,16);
 
 
 }
@@ -177,15 +189,24 @@ context.drawImage(lambs,50,50,16,16);
 
 
     var counter = 0;
+    var price = 100;
 
     canvas.addEventListener('click',increment);
 
 
        function increment(){
+        
             counter++;
             console.log(counter);
 
+            cost = price * counter;
+
             localStorage.setItem('Value', counter);
+            localStorage.setItem('Cost', cost);
+
+
+
+
         }
 
 
