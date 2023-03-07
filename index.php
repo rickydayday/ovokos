@@ -5,13 +5,12 @@
 <link type="text/css" rel="stylesheet" href="./assets/banner-styles.css">
 
 <title>Γίνε Vοσκός oriuepa </title>
-<!-- <meta name="keywords" content="million dollar homepage, home, page, million, dollar, pixels, pixel, alex tew, alex, tew, student, entrepreneur, internet, millionaire, university, degree, business, marketing, ideas, advertising, banner, ad, links"> -->
-<!-- <meta name="description" content="The website of Alex Tew, a 21-year-old entrepreneur, who hopes to pay his way through university by selling 1 million pixels of internet ad space for $1 each."> -->
+
 <meta name="ROBOTS" content="ALL">
 <link rel="stylesheet" type="text/css" href="./assets/style.css">
 
 
-</head><body bgcolor="#000000" data-feedly-mini="yes">
+</head><body data-feedly-mini="yes">
 
 <div id="d" style="position: absolute; z-index: 99; left: 78px; top: 305px; border: 1px solid rgb(255, 0, 0); background: rgb(255, 255, 255); display: none;">
 <span id="xcoord">Your next two clicks could help feed someone</span><span id="ycoord"></span>
@@ -19,11 +18,12 @@
 
 <center>
 
-<table style="position:relative; LEFT: 0; TOP: 0; z-index: 0;" border="0" bgcolor="#e1e1e1" cellpadding="0" cellspacing="0" width="1002">
+<table style="position:relative; LEFT: 0; TOP: 0; z-index: 0;" border="0"  cellpadding="0" cellspacing="0" width="1002">
 <tbody><tr><td id="tablebreak" width="1"></td><td>
 
 <div id="toplogo">
-	<a target="_self" href="#"><img src="./assets/Untitled-removebg-preview (1).png" border="0" width="360" height="36" alt="" style="position:absolute; LEFT: 11; TOP: 7px; z-index: 1;"></a>
+	<a target="_self" href="#">
+    <img src="./assets/lambss.png" border="0" width="360" height="36" alt="" style="position:absolute; LEFT: 11; TOP: 7px; z-index: 1;"></a>
 	<div style="background:#fff;position:absolute; LEFT: 405; TOP: 0px; z-index: 1; height:44px;width:428px;">
 		<!-- <img src="./assets/toptag2top.gif" width="428" height="24" border="0" alt="1,000,000 pixels - $1 per pixel - Own a piece of internet history!"> -->
 		<table cellpadding="0" cellspacing="0" border="0">
@@ -52,7 +52,7 @@
 	}
 </style>
 <script src="./assets/widgets.js" type="text/javascript"></script></td><td>
-<a class="nav" href="#">Homepage</a> &nbsp;|&nbsp; <a class="nav" href="#">Buy Pipes</a> &nbsp;|&nbsp; <a class="nav" href="#">Pipes Journal</a> &nbsp;|&nbsp; <a class="nav" href="#"></a> &nbsp;|&nbsp; <a class="nav" href="#">Pipe List</a> &nbsp;|&nbsp; <a class="nav" href="#">Press</a> &nbsp;|&nbsp; <a class="nav" href="./UserLogin">Make Payment</a> &nbsp;|&nbsp; <a class="nav" href="#">Contact me</a>
+<a class="nav" href="./index.php">Homepage</a> &nbsp;|&nbsp; <a class="nav" href="#"></a> &nbsp;|&nbsp; <a class="nav" href="#">Lamb list</a> &nbsp;|&nbsp; <a class="nav" href="./UserLogin">Make Payment</a> &nbsp;|&nbsp; <a class="nav" href="#">Contact us</a>
 
 </td>
 </tr>
@@ -81,79 +81,92 @@ var sc_remove_link=1;
 
 <!-- <script type="text/javascript" language="javascript" src="./assets/counter.js"></script> -->
 <!-- End of StatCounter Code -->
-<tr><td id="tablebreak" width="1"></td><td width="1000" height="1000" background="./assets/bg10.gif" valign="top">
- <div id="f" style="display:none;font-size:0px;margin:0px;padding:0px;border: #0000ff 2px solid;position: absolute;width:1px;height:1px;z-index:2;"></div>
+<tr><td id="tablebreak" width="1"></td>
+  <td width="1000" height="1000" background="./assets/10.png" valign="top">
+ 
 
 
- <style>
+<!--  <style>
   canvas{
-    background-image:url('./assets/IMG-20221117-WA0002 1.jpg');
+    background-image:url('./assets/imagesheet.jpeg');
 
   }
  </style>
-   <canvas  id="myCanvas" width="1000" height="1000"></canvas>
+ --><canvas id="myCanvas" width="1000" height="1000"></canvas>
 
-   <script type="text/javascript">
+  
+ <script type="text/javascript">
 
-     
-	function getSquare(canvas, evt) {
-    var rect = canvas.getBoundingClientRect();
+  //global declaration
+
+  var canvas = document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
+  var lambs = new Image();
+
+  lambs.addEventListener('load',eventLoad,false);
+  lambs.src = './assets/red.png';
+
+   //get squares   
+	 function getSquare(canvas, evt){
+       var rect = canvas.getBoundingClientRect();
+
     return {
         x: 1 + (evt.clientX - rect.left) - (evt.clientX - rect.left)%10,
         y: 1 + (evt.clientY - rect.top) - (evt.clientY - rect.top)%10
     };
 }
 
+
+
+// draw grid
 function drawGrid(context) {
-    for (var x = 0.5; x < 10001; x += 10) {
+
+    for (var x = 0.5; x < 1001; x += 10) {
       context.moveTo(x, 0);
-      context.lineTo(x, 10000);
+      context.lineTo(x, 1000);
+      // context.drawImage(lambs,x, y,1000,1000);
     }
     
-    for (var y = 0.5; y < 10001; y += 10) {
+    for (var y = 0.5; y < 1001; y += 10) {
       context.moveTo(0, y);
-      context.lineTo(10000, y);
+      context.lineTo(1000, y);
+      // context.drawImage(lambs,x, y,1000,1000);
     }
     
-    context.strokeStyle = "#ddd";
-    context.stroke();
+   
 }
+
+
 
 function fillSquare(context, x, y){
-    context.fillStyle = "gray"
-    context.fillRect(x,y,9,9);
+
+    // context.fillStyle = "white"
+    // context.fillRect(x,y,9,9);
+    context.drawImage(lambs,x, y,10,10);
+
 }
 
-var canvas = document.getElementById('myCanvas');
-var context = canvas.getContext('2d');
-var lambs = new Image();
 
-lambs.addEventListener('load',eventLoad,false);
-lambs.src = './assets/IMG-20221117-WA0006.jpg';
-
+//load the event ..
 function eventLoad(){
 
 	drawScreen();
+
 }
 
 
 function drawScreen(){
 
-  for (var x = 0.5; x < 10001; x += 1) {
-      context.drawImage(lambs,x, y,16,16);
-  
-    }
+  for (var x = 0.5; x < 1001; x += 1) {
+
+   }
     
-    for (var y = 0.5; y < 10001; y+=1) {
+    for (var y = 0.5; y < 1001; y+=1) {
+
       context.moveTo(0, y);
-      context.drawImage(lambs,x, y,16,16);
-    }
     
 
-
-// context.drawImage(lambs,0, 0,16,16);
-// context.drawImage(lambs,50,50,16,16);
-
+    }
 
 }
 
