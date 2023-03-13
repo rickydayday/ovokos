@@ -23,9 +23,9 @@
 
 <div id="toplogo">
 	<a target="_self" href="#">
-    <img src="./assets/lambss.png" border="0" width="360" height="36" alt="" style="position:absolute; LEFT: 11; TOP: 7px; z-index: 1;"></a>
-	<div style="background:#fff;position:absolute; LEFT: 405; TOP: 0px; z-index: 1; height:44px;width:428px;">
-		<!-- <img src="./assets/toptag2top.gif" width="428" height="24" border="0" alt="1,000,000 pixels - $1 per pixel - Own a piece of internet history!"> -->
+    <img src="./assets/logo-tm.png" border="0"  alt="" style="position:absolute; LEFT: 11; TOP: 7px; z-index: 1;"></a>
+	<div style="position:absolute; LEFT: 405; TOP: 0px; z-index: 1; height:36px;width:428px;">
+		<img src="./assets/logo.png" width="360" height="52" border="0" alt="1,000,000 pixels - $1 per pixel - Own a piece of internet history!">
 		<table cellpadding="0" cellspacing="0" border="0">
 	<tbody><tr></tr>
 	<tr><td style="text-align: center"></td></tr>
@@ -52,7 +52,7 @@
 	}
 </style>
 <script src="./assets/widgets.js" type="text/javascript"></script></td><td>
-<a class="nav" href="./index.php">Homepage</a> &nbsp;|&nbsp; <a class="nav" href="#"></a> &nbsp;|&nbsp; <a class="nav" href="#">Lamb list</a> &nbsp;|&nbsp; <a class="nav" href="./UserLogin">Make Payment</a> &nbsp;|&nbsp; <a class="nav" href="#">Contact us</a>
+<a class="nav" href="./index.php">Homepage</a> &nbsp;|&nbsp; <a class="nav" href="#"></a> &nbsp;|&nbsp; <a class="nav" href="#">Lamb list</a> &nbsp;|&nbsp; <a class="nav" href="./UserLogin">Make Payment</a> &nbsp;|&nbsp; <a class="nav" href="./routes/contact.php">Contact us</a>
 
 </td>
 </tr>
