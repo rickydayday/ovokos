@@ -1,3 +1,14 @@
+<?php include('./config/db.php') ?>
+
+<?php
+
+$query = 'SELECT *  FROM clients';    
+$results = mysqli_query($conn, $query);
+
+
+
+?> 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <!-- saved from url=(0037)http://www.milliondollarhomepage.com/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -52,7 +63,7 @@
 	}
 </style>
 <script src="./assets/widgets.js" type="text/javascript"></script></td><td>
-<a class="nav" href="./index.php">Homepage</a> &nbsp;|&nbsp; <a class="nav" href="#"></a> &nbsp;|&nbsp; <a class="nav" href="#">Lamb list</a> &nbsp;|&nbsp; <a class="nav" href="./UserLogin">Make Payment</a> &nbsp;|&nbsp; <a class="nav" href="./routes/contact.php">Contact us</a>
+<a class="nav" href="./index.php">Homepage</a> &nbsp;|&nbsp; <a class="nav" href="#"></a> &nbsp;|&nbsp; <a class="nav" href="./list.php">Lamb list</a> &nbsp;|&nbsp; <a class="nav" href="./UserLogin">Make Payment</a> &nbsp;|&nbsp; <a class="nav" href="./routes/contact.php">Contact us</a>
 
 </td>
 </tr>
@@ -77,13 +88,27 @@ var sc_remove_link=1;
 </script>
 
 
+    <?php
+         while ($row = mysqli_fetch_assoc($results))
+
+         
+    {
+
+
+    ?>
+
+
+
 
 
 <!-- <script type="text/javascript" language="javascript" src="./assets/counter.js"></script> -->
 <!-- End of StatCounter Code -->
-<tr><td id="tablebreak" width="1"></td>
-  <td width="1000" height="1000" background="./assets/10.png" valign="top">
+<tr>
  
+    <td id="tablebreak" width="1"></td>
+  <td width="1000" height="1000" background="./assets/10.png">
+
+ <a href="<?php echo $row['url']; ?>"><img width="50" height="50" src="./requests/uploads/<?php echo $row['file']; ?>" title="<?php echo $row['url']; ?>"></a>
 
 
 <!--  <style>
@@ -92,7 +117,13 @@ var sc_remove_link=1;
 
   }
  </style>
- --><canvas id="myCanvas" width="1000" height="1000"></canvas>
+
+
+ -->
+
+
+
+ <canvas id="myCanvas" width="1000" height="1000"></canvas>
 
   
  <script type="text/javascript">
@@ -124,6 +155,7 @@ function drawGrid(context) {
     for (var x = 0.5; x < 1001; x += 10) {
       context.moveTo(x, 0);
       context.lineTo(x, 1000);
+      
       // context.drawImage(lambs,x, y,1000,1000);
     }
     
@@ -135,6 +167,8 @@ function drawGrid(context) {
     
    
 }
+
+
 
 
 
@@ -216,16 +250,17 @@ function drawScreen(){
 
             localStorage.setItem('Value', counter);
             localStorage.setItem('Cost', cost);
-
-
-
-
         }
 
 
 
 </script>
+ <?php
 
+      }
+
+      ?>
+</td>
 <!-- end actual page content -->
 <tr>
 

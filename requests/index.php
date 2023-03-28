@@ -291,7 +291,7 @@ input{
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <button name="submit" class="btn btn-sm btn-primary w-100">Submit</button>
+                                                <button type="submit" name="submit" class="btn btn-sm btn-primary w-100">Submit</button>
                                             </div>
                                         </div>
                                     </form>

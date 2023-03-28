@@ -8,6 +8,8 @@ $results = mysqli_query($conn, $query);
 
 
 
+
+
 ?>  
 
 <!DOCTYPE html>
@@ -251,26 +253,7 @@ $results = mysqli_query($conn, $query);
 </a>
 
 </li>
-<li class="nav-item">
-<a class="nav-link" href="https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro/blob/main/CHANGELOG.md" target="_blank">
-<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center  me-2 d-flex align-items-center justify-content-center">
-<svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>credit-card</title>
-<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-<g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-<g transform="translate(1716.000000, 291.000000)">
-<g transform="translate(453.000000, 454.000000)">
-<path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
-<path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
-</g>
-</g>
-</g>
-</g>
-</svg>
-</div>
-<span class="nav-link-text ms-1">Logs</span>
-</a>
-</li>
+
 </ul>
 </div>
 <div class="sidenav-footer mx-3 mt-3 pt-3">
@@ -361,9 +344,9 @@ Overview Of Paid Lambs
 <div class="ms-auto my-auto mt-lg-0 mt-4">
 <div class="ms-auto my-auto">
 <a href="#" class="btn bg-gradient-primary btn-sm mb-0" target="_blank">+&nbsp; New Payment</a>
-<button type="button" class="btn btn-outline-primary btn-sm mb-0" data-bs-toggle="modal" data-bs-target="#import">
+<!-- <button type="button" class="btn btn-outline-primary btn-sm mb-0" data-bs-toggle="modal" data-bs-target="#import">
 Import
-</button>
+</button> -->
 <div class="modal fade" id="import" tabindex="-1" aria-hidden="true">
 <div class="modal-dialog mt-lg-10">
 <div class="modal-content">
@@ -438,16 +421,16 @@ Import
 
 
 <td>
-<span class="badge badge-danger badge-sm">Paid</span>
+<a href="#"><span class="badge badge-danger badge-sm">Post</span></a>
 </td>
 <td class="text-sm">
 <!-- <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
-<i class="fas fa-eye text-secondary"></i>
-</a> -->
+<i class="fas fa-eye text-secondary"></i> -->
+</a>
 <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
 <i class="fas fa-user-edit text-secondary"></i>
 </a>
-<a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+<a href="delete-process.php?id=<?php echo $row["id"]; ?>" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
 <i class="fas fa-trash text-secondary"></i>
 </a>
 </td>
