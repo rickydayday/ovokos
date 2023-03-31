@@ -5,9 +5,7 @@
 $query = 'SELECT *  FROM clients';    
 $results = mysqli_query($conn, $query);
 
-$row = mysqli_fetch_assoc($results);
-$image_data = $row['file'];
-$image = imagecreatefromjpeg('data://image/jpeg;base64,' . base64_encode($image_data));
+
 
 ?> 
 
@@ -241,7 +239,9 @@ function drawScreen(){
 
         }
 
+        const myImageData = context.createImageData(50, 50);
 
+        const ImageData = context.getImageData();
 
         
 
