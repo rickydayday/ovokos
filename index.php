@@ -5,7 +5,9 @@
 $query = 'SELECT *  FROM clients';    
 $results = mysqli_query($conn, $query);
 
-
+$row = mysqli_fetch_assoc($results);
+$image_data = $row['file'];
+$image = imagecreatefromjpeg('data://image/jpeg;base64,' . base64_encode($image_data));
 
 ?> 
 
@@ -97,16 +99,23 @@ var sc_remove_link=1;
 
     ?>
 
+    <style type="text/css">
+        img[title] {
+  position: relative;
+  /* Other styling properties */
+}
 
-
-
+img[title]:hover:after {
+  content: attr(title);
+  position: absolute;
+  /* Other styling properties */
+}
+    </style>
 
 <!-- <script type="text/javascript" language="javascript" src="./assets/counter.js"></script> -->
 <!-- End of StatCounter Code -->
-<tr>
- 
-    <td id="tablebreak" width="1"></td>
-  <td width="1000" height="1000" background="./assets/10.png">
+<tr><td id="tablebreak" width="1"></td>
+  <td width="1000" height="1000" background="./assets/10.png" style="glyph-orientation-horizontal: auto;">
 
  <a href="<?php echo $row['url']; ?>"><img width="50" height="50" src="./requests/uploads/<?php echo $row['file']; ?>" title="<?php echo $row['url']; ?>"></a>
 
@@ -169,9 +178,6 @@ function drawGrid(context) {
 }
 
 
-
-
-
 function fillSquare(context, x, y){
 
     // context.fillStyle = "white"
@@ -204,12 +210,7 @@ function drawScreen(){
 
 }
 
-
-
- drawGrid(context);
  eventLoad();
-
-
 
     canvas.addEventListener('click', function(evt) {
     var mousePos = getSquare(canvas, evt);
@@ -219,29 +220,16 @@ function drawScreen(){
   
     fillSquare(context, mousePos.x, mousePos.y);
 
-   
-   
-     
-
-
-    
-
 })
 
     //localstorage count
-
-
-
-  
-
-
     var counter = 0;
     var price = 100;
 
     canvas.addEventListener('click',increment);
 
 
-       function increment(){
+       function increment() {
         
             counter++;
             console.log(counter);
@@ -250,7 +238,12 @@ function drawScreen(){
 
             localStorage.setItem('Value', counter);
             localStorage.setItem('Cost', cost);
+
         }
+
+
+
+        
 
 
 

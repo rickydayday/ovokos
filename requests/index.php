@@ -317,7 +317,7 @@ input{
                             console.log(100 * lambs);
 
                             var lambs = localStorage.getItem("Value");
-                            console.log(price)
+                           var cost = localStorage.getItem("Cost");
 
 
                             var displayLambs = `<span class="fw-bold">Product:</span><span class="c-green">: Number of
@@ -325,7 +325,7 @@ input{
 
 
                             var displayPrice =` <span class="fw-bold">Price:</span>
-                                        <span class="c-green">:€${price}</span>`;
+                                        <span class="c-green">:€${cost}</span>`;
 
                            
                             

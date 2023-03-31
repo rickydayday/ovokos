@@ -58,13 +58,9 @@ function fillSquare(context, x, y){
 }
 
 canvas.addEventListener('click', function(evt) {
-    var mousePos = getSquare(canvas, evt);
-    var count;
-    fillSquare(ctx, mousePos.x, mousePos.y);
-    const path = './assets/red.png'
-
-    ctx.drawImage(path, 33, 71, 104, 124, 21, 20, 87, 104);
-
+   
+  const path = './assets/red.png';
+  ctx.drawImage(path, 33, 71, 104, 124, 21, 20, 87, 104);
 
 
 })
@@ -75,7 +71,7 @@ imageLoader.addEventListener('change', function() {
   const img = new Image();
   img.onload = function() {
     // Draw image on canvas
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(img, 33, 77);
   };
   img.src = URL.createObjectURL(file);
 });
