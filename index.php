@@ -86,16 +86,7 @@ var sc_partition=7;
 var sc_security="3dbf1565";
 var sc_remove_link=1;
 </script>
-
-
-    <?php
-         while ($row = mysqli_fetch_assoc($results))
-
-         
-    {
-
-
-    ?>
+ 
 
     <style type="text/css">
         img[title] {
@@ -112,21 +103,14 @@ img[title]:hover:after {
 
 <!-- <script type="text/javascript" language="javascript" src="./assets/counter.js"></script> -->
 <!-- End of StatCounter Code -->
+       <?php
+         while ($row = mysqli_fetch_assoc($results))
+      {
+?>
 <tr><td id="tablebreak" width="1"></td>
-  <td width="1000" height="1000" background="./assets/10.png" style="glyph-orientation-horizontal: auto;">
-
  <a href="<?php echo $row['url']; ?>"><img width="50" height="50" src="./requests/uploads/<?php echo $row['file']; ?>" title="<?php echo $row['url']; ?>"></a>
+  <td width="1000" height="1000" background="./assets/10.png">
 
-
-<!--  <style>
-  canvas{
-    background-image:url('./assets/imagesheet.jpeg');
-
-  }
- </style>
-
-
- -->
 
 
 
@@ -248,15 +232,11 @@ function drawScreen(){
 
 
 </script>
- <?php
-
-      }
-
-      ?>
 </td>
+
 <!-- end actual page content -->
 <tr>
-
+<?php } ?>
 <td style="background-color: #fff !important;" id="note" height="24" colspan="6">
 
   <img scrolling="no" frameborder="0" allowtransparency="true" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/BBC_Logo_2021.svg/320px-BBC_Logo_2021.svg.png"  title="Twitter Follow Button" data-twttr-rendered="true" style="visibility: visible; width: 175px; height: 50px;">
